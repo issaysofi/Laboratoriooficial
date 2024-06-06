@@ -1,0 +1,151 @@
+@font-face {
+  font-family: 'butler light';
+  src: url(Butler_Light.otf);
+}
+@font-face {
+  font-family: 'butler bold';
+  src: url(Butler_Bold.otf);
+}
+
+body {
+    background-color: #FAECD9;
+    font-family: "butler bold";
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #CDCD9E;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.formulario {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FAD9C8;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario label,
+.formulario input,
+.formulario select,
+.formulario button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.comidas-recomendadas {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos inputs */
+.formulario input[type="number"],
+.formulario input[type="text"],
+.formulario select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para el boton */
+.formulario button {
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 16px;
+  background-color: #7EB283;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*hover */
+.formulario button:hover {
+  background-color: #0056b3;
+}
+
+button {
+    background-color: #7EB283;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 25%;
+    margin: 30px auto 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+
+/* Tablets (800px) */
+@media (max-width: 800px) {
+    .formulario {
+        width: 80%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .comidas-recomendadas {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    header {
+        font-size: 24px;
+        padding: 15px;
+    }
+
+    .formulario button,
+    .formulario input[type="number"],
+    .formulario input[type="text"],
+    .formulario select {
+        width: calc(100% - 10px);
+    }
+}
+
+/* Móviles (600px) */
+@media (max-width: 600px) {
+    .formulario {
+        width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .comidas-recomendadas {
+        width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    header {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .formulario button,
+    .formulario input[type="number"],
+    .formulario input[type="text"],
+    .formulario select {
+        width: calc(100% - 5px);
+    }
+
+    button {
+        width: 50%;
+    }
+}

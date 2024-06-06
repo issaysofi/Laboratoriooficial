@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda la cita de tu perrito</title>
+    <link rel="stylesheet" type="text/css" href="vacunas.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Agenda la cita de tu perrito</h1>
+    </header>
+    <div class="todo">
+        <!-- texto -->
+        <div class="izquierda">
+            <h2>¿Por qué son importantes las vacunas?</h2>
+            <p>Las vacunas son cruciales para prevenir enfermedades infecciosas graves y reducir la propagación de epidemias. Protegen tanto al individuo vacunado como a la comunidad mediante la inmunidad colectiva, salvando vidas y evitando complicaciones de salud.</p>
+        </div>
+        <!-- espacio para agendar -->
+        <div class="derecha">
+            <div class="calendar">
+                <label for="fecha">Selecciona la fecha de la cita:</label>
+                <input type="date" id="fecha" name="fecha">
+                <label for="vacuna">Selecciona el tipo de vacuna:</label>
+                <select id="vacuna" name="vacuna">
+                    <option value="Parvovirus">Parvovirus</option>
+                    <option value="Moquillo">Moquillo</option>
+                    <option value="Rabia">Rabia</option>
+                    <option value="Leptospirosis">Leptospirosis</option>
+                    <option value="Tos de las perreras">Tos de las perreras</option>
+                </select>
+            </div>
+        
+            <button class="button" id="agendar">Agendar cita</button>
+        
+            <div class="message-container" id="mensaje">
+                <p>CITA AGENDADA CON ÉXITO</p>
+                <img src="cara_perrito.ico" alt="Éxito">
+              </div>
+              
+              <div class="regresar">
+                <button onclick="window.location.href='cuidados_index.html';" class="button">Regresar al menú</button>
+              </div>
+              
+        </div>
+    </div>
+    <div class="bottom">
+        <img src="rejilla7.png" alt="">
+    </div>
+
+    <script>
+        document.getElementById("agendar").addEventListener("click", function () {
+            var mensaje = document.getElementById("mensaje");
+            mensaje.style.display = "block";
+            setTimeout(function () {
+                mensaje.style.display = "none";
+            }, 3000);
+        });
+
+
+
+        document.getElementById("agendar").addEventListener("click", function () {
+            var fecha = document.getElementById("fecha").value;
+            var vacuna = document.getElementById("vacuna").value;
+            var mensaje = document.getElementById("mensaje");
+
+            if (fecha === "" || vacuna === "") {
+                alert("Rellena todos los campos, por favor.");
+            } else {
+                mensaje.style.display = "block";
+                setTimeout(function () {
+                    mensaje.style.display = "none";
+                }, 3000);
+            }
+        });
+
+    </script>
+</body>
+
+</html>

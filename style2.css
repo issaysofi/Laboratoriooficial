@@ -1,0 +1,255 @@
+body {
+    overflow: hidden;
+    font-family: 'butler light';
+    background-color: #F4ECD9;
+    margin: 0px;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'butler light';
+    src: url(Butler_Light.otf);
+}
+
+@font-face {
+    font-family: 'butler bold';
+    src: url(Butler_Bold.otf);
+}
+
+/* nav */
+nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: #CBCD9E;
+}
+
+.logoNav {
+    width: 20%;
+}
+
+.logoNav img {
+    width: 120px;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.btnNav {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btnNav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'butler bold';
+    font-size: 25px;
+}
+
+body {
+    background-image: url('fondo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* contenido */
+.todo {
+    height: 510px;
+    display: flex;
+}
+
+.texto {
+    width: 35%;
+    margin-left: 100px;
+    margin-top: 60px;
+}
+
+.texto h1 {
+    font-size: 70px;
+}
+
+.texto p {
+    width: 100%;
+}
+
+/* cuadrado para adoptar */
+.form_container {
+    background-color: #CBCD9E;
+    border-radius: 10px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 30%;
+    text-align: center; /* Centra el contenido del contenedor */
+}
+
+.row {
+    display: flex;
+    justify-content: left;
+}
+
+form {
+    text-align: left;
+}
+
+h3 {
+    color: #fff;
+    margin-left: 30px;
+}
+
+input {
+    width: 170%; /* Hace que el campo de entrada de texto ocupe todo el ancho disponible */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #a0a17a;
+    border-radius: 5px;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+input[type="text"],
+input[type="email"],
+.message-box {
+    width: 170%; /* Ajusta el ancho de los campos al 170% */
+    padding: 10px;
+    margin: 10px auto; /* Centra los campos horizontalmente en el contenedor */
+    display: block; /* Convierte los campos en bloques para centrarlos horizontalmente */
+    border: 1px solid #a0a17a;
+    border-radius: 5px;
+    text-align: left; /* Centra el texto dentro de los campos de entrada de texto y del campo de mensaje */
+    margin-left: 30px;
+}
+
+.message-box {
+    height: 100px;
+}
+
+button {
+    background-color: #a0a17a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    margin-left: 30px;
+}
+
+button:hover {
+    background-color: #fff;
+    color: #a0a17a;
+}
+
+/* Responsive Design */
+
+/* Tablets (800px) */
+@media (max-width: 800px) {
+    nav {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    .logoNav {
+        width: 100%; /* La imagen ocupa todo el ancho */
+        text-align: center; /* Centra la imagen */
+    }
+
+    .btnNav {
+        width: 100%;
+        flex-direction: column; /* Apila los botones verticalmente */
+    }
+
+    .btnNav a {
+        margin: 10px 0; /* Espacio entre botones */
+    }
+
+    .todo {
+        flex-direction: column; /* Coloca los elementos en una columna */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    .texto {
+        width: 90%;
+        margin: 20px auto;
+        text-align: center; /* Centra el texto */
+    }
+
+    .texto h1 {
+        font-size: 50px; /* Reduce el tamaño de la fuente */
+    }
+
+    .form_container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    input,
+    .message-box,
+    button {
+        width: 100%;
+        margin: 10px 0;
+        margin-left: 0; /* Elimina el margen izquierdo */
+    }
+
+    h3 {
+        margin-left: 0;
+    }
+}
+
+/* Móviles (600px) */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    .logoNav {
+        width: 100%; /* La imagen ocupa todo el ancho */
+        text-align: center; /* Centra la imagen */
+    }
+
+    .btnNav {
+        width: 100%;
+        flex-direction: column; /* Apila los botones verticalmente */
+    }
+
+    .btnNav a {
+        margin: 10px 0; /* Espacio entre botones */
+    }
+
+    .todo {
+        flex-direction: column; /* Coloca los elementos en una columna */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    .texto {
+        width: 90%;
+        margin: 20px auto;
+        text-align: center; /* Centra el texto */
+    }
+
+    .texto h1 {
+        font-size: 40px; /* Reduce el tamaño de la fuente */
+    }
+
+    .form_container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    input,
+    .message-box,
+    button {
+        width: 100%;
+        margin: 10px 0;
+        margin-left: 0; /* Elimina el margen izquierdo */
+    }
+
+    h3 {
+        margin-left: 0;
+    }
+}

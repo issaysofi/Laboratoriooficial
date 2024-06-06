@@ -1,0 +1,141 @@
+/* CSS para 600px y 800px */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4ECD9;
+    font-family: 'butler light';
+}
+
+header {
+    background-color: #CBCD9E;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.todo {
+    margin-top: 100px;
+    display: flex;
+}
+
+/* Texto */
+.izquierda {
+    width: 30%;
+    margin-left: 200px;
+}
+
+.izquierda h2 {
+    font-size: 50px;
+}
+
+.izquierda p {
+    font-size: 18px;
+}
+
+/* Espacio para agendar */
+
+.derecha {
+    margin-left: 100px;
+}
+
+.calendar {
+    margin: 20px auto;
+    width: 400px;
+    background-color: #FAD9C8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.calendar label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: light;
+    font-size: 23px;
+}
+
+.calendar input[type="date"],
+.calendar select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.button {
+    font-family: 'butler light';
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    background-color: #7EB283;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: #7EB283;
+}
+
+.message-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1001;
+    /* Muestra el mensaje encima del fondo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    /* Centra el contenido horizontalmente */
+}
+
+.message-container p {
+    margin-bottom: 10px;
+}
+
+.message-container img {
+    display: block;
+    margin: 0 auto;
+    /* Centra la imagen horizontalmente */
+}
+
+.bottom img {
+    width: 100%;
+    margin-top: 180px;
+}
+
+/* Media queries */
+
+@media (max-width: 800px) {
+    .todo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .izquierda,
+    .derecha {
+        width: 80%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .calendar {
+        width: 80%;
+    }
+}

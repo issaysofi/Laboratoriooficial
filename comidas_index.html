@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendador de Comidas para Mascotas</title>
+    <link rel="stylesheet" type="text/css" href="comidas.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Alimentacion</h1>
+    </header>
+
+    <div class="formulario">
+        <label for="tipo-mascota">Tipo de mascota:</label>
+        <select id="tipo-mascota">
+            <option value="cachorro">Cachorro</option>
+            <option value="adulto">Adulto</option>
+        </select>
+        <br>
+        <label for="peso">Peso (en KG):</label>
+        <input type="number" id="peso" min="0">
+        <br>
+        <label for="raza">Raza:</label>
+        <input type="text" id="raza">
+        <br>
+        <button onclick="recomendarComidas()">Concentrado recomendado</button>
+    </div>
+
+    <div id="comidas-recomendadas" class="comidas-recomendadas">
+        <!-- Aquí se mostrarán las comidas recomendadas -->
+    </div>
+
+    <button onclick="window.location.href='cuidados_index.html';" class="button">Regresar al menú</button>
+
+    <script>
+        function recomendarComidas() {
+            var tipoMascota = document.getElementById("tipo-mascota").value;
+            var peso = document.getElementById("peso").value;
+            var raza = document.getElementById("raza").value;
+            var comidasRecomendadas = document.getElementById("comidas-recomendadas");
+
+            comidasRecomendadas.innerHTML = ""; // Limpiar recomendaciones anteriores
+
+            // Listas de comidas para cachorros y adultos
+            var comidasCachorro = [
+                "Pienso para cachorros de pollo",
+                "Comida húmeda para cachorros de ternera",
+                "Snacks de entrenamiento para cachorros",
+                "Comida seca para cachorros de pescado",
+                "Biscuits de entrenamiento para cachorros",
+                "Comida casera balanceada para cachorros"
+            ];
+
+            var comidasAdulto = [
+                "Pienso para adultos de cordero",
+                "Comida húmeda para adultos de pollo",
+                "Snacks de carne para adultos",
+                "Comida seca para adultos de salmón",
+                "Biscuits para el cuidado dental de adultos",
+                "Comida casera balanceada para adultos"
+            ];
+
+            // Función para obtener una selección aleatoria de elementos de una lista
+            function seleccionAleatoria(lista, cantidad) {
+                var seleccion = [];
+                var listaTemporal = lista.slice(); // Copia de la lista original para no modificarla
+                while (seleccion.length < cantidad && listaTemporal.length > 0) {
+                    var indice = Math.floor(Math.random() * listaTemporal.length);
+                    seleccion.push(listaTemporal.splice(indice, 1)[0]);
+                }
+                return seleccion;
+            }
+
+            var cantidadComidas = 3; // Cantidad de comidas recomendadas a mostrar
+
+            if (tipoMascota === "cachorro") {
+                // Recomendar comidas para cachorros
+                var recomendaciones = "<h2>Comidas recomendadas para cachorros:</h2>";
+                recomendaciones += "<ul>";
+                var comidasSeleccionadas = seleccionAleatoria(comidasCachorro, cantidadComidas);
+                comidasSeleccionadas.forEach(function (comida) {
+                    recomendaciones += "<li>" + comida + "</li>";
+                });
+                recomendaciones += "</ul>";
+                comidasRecomendadas.innerHTML = recomendaciones;
+            } else if (tipoMascota === "adulto") {
+                // Recomendar comidas para adultos
+                var recomendaciones = "<h2>Comidas recomendadas para adultos:</h2>";
+                recomendaciones += "<ul>";
+                var comidasSeleccionadas = seleccionAleatoria(comidasAdulto, cantidadComidas);
+                comidasSeleccionadas.forEach(function (comida) {
+                    recomendaciones += "<li>" + comida + "</li>";
+                });
+                recomendaciones += "</ul>";
+                comidasRecomendadas.innerHTML = recomendaciones;
+            } else {
+                // Tipo de mascota no reconocido
+                comidasRecomendadas.innerHTML = "<p>Tipo de mascota no reconocido.</p>";
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
